@@ -14,7 +14,7 @@ class Student(Person):
 class Teacher(Person):
     def __init__(self,name,age,subject):
         super().__init__(name,age) #super-вызывает объект родительского класса, избегая дублирования и ошибок
-        self.subject=subject 
+        self.subject=subject #дабавляет предмет преподавателя
         self.students=[]
 
     def add_student(self, student): #добавляет студента в список
