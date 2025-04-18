@@ -14,24 +14,24 @@ class Student(Person):
 class Teacher(Person):
     def __init__(self,name,age,subject):
         super().__init__(name,age) #super-вызывает объект родительского класса, избегая дублирования и ошибок
-        self.subject=subject #дабавляет предмет преподавателя
+        self.subject=subject #дабавляем предмет преподавателя
         self.students=[]
 
-    def add_student(self, student): #добавляет студента в список
+    def add_student(self, student): #добавляем студента в список
         if student not in self.students:
             self.students.append(student)
             print(f'Студент {student.name} добавлен к преподавателю {self.name}')
         else:
             print(f'Студент {student.name} уже есть у преподавателя {self.name}')
     
-    def remove_student(self, student): #удаляет студента из списка
+    def remove_student(self, student): #удаляем студента из списка
         if student in self.students:
             self.students.remove(student)
             print(f'Студент {student.name} удален у преподавателя {self.name}')
         else:
             print(f'Студента {student.name} нет у преподавателя {self.name}')
     
-    def list_students(self): #удаляет студента из списка
+    def list_students(self): #удаляем студента из списка
         print(f'\nСписок студентов преподавателя {self.name} ({self.subject}):')
         if not self.students:
             print('нет студентов')
