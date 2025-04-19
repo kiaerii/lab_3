@@ -9,8 +9,8 @@ class Student:
     def __str__(self):
         return f"Student(name='{self.name}', surname='{self.surname}', student_id={self.student_id}, grades={self.grades})"
 
-    def __eq__(self, other):
-        if isinstance(other, Student):
+    def __eq__(self, other): #проверка на равенство айди
+        if isinstance(other, Student): #является ли other объектом класса Student
             return self.student_id==other.student_id
         return False
 
