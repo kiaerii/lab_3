@@ -18,14 +18,14 @@ class Teacher(Person):
         self.students=[]
 
     def add_student(self, student): #добавляем студента в список
-        if student not in self.students:
+        if student not in self.students: #проверка на дублирование
             self.students.append(student)
             print(f'Студент {student.name} добавлен к преподавателю {self.name}')
         else:
             print(f'Студент {student.name} уже есть у преподавателя {self.name}')
     
     def remove_student(self, student): #удаляем студента из списка
-        if student in self.students:
+        if student in self.students: #проверка наличия
             self.students.remove(student)
             print(f'Студент {student.name} удален у преподавателя {self.name}')
         else:
@@ -33,10 +33,10 @@ class Teacher(Person):
     
     def list_students(self): #удаляем студента из списка
         print(f'\nСписок студентов преподавателя {self.name} ({self.subject}):')
-        if not self.students:
+        if not self.students: #проверка на пустой список
             print('нет студентов')
         else:
-            for student in self.students:
+            for student in self.students: #перебор студентов
                 print(f'{student.name}')
 
 if __name__ == "__main__": #создаем студентов
