@@ -1,9 +1,9 @@
 #3
 import math
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod #abc-используются для создания абстрактных базовых классов
 
 class Shape(ABC): #фигура
-    @abstractmethod
+    @abstractmethod  #ошибка будет видна сразу при создании класса
     def area(self): #площадь
         pass
     
@@ -23,7 +23,7 @@ class Rectangle(Shape): #прямоугольник
     def perimeter(self):
         return 2*(self.width + self.height)
     
-    def __str__(self):
+    def __str__(self): #переделывает в строку
         return f'Rectangle(width={self.width}, height={self.height})'
 
 
@@ -37,7 +37,7 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
     
-    def __str__(self):
+    def __str__(self): #переделывает в строку
         return f'Circle(radius={self.radius})'
 
 
